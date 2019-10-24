@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { BackofficeModule } from './backoffice/backoffice.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { StoreModule } from './store/store.module';
 
 @Module({
   imports: [
@@ -16,7 +17,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true
     }),
-    BackofficeModule
+    BackofficeModule,
+    StoreModule
   ],
   controllers: [],
   providers: [],
