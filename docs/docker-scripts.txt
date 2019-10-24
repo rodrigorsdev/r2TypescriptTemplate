@@ -1,0 +1,14 @@
+
+mogodb
+docker run -d -p 27017:27017 -p 28017:28017 -e AUTH=no tutum/mongodb
+
+mysql
+docker run --name r2TemplateTS -e MYSQL_ROOT_PASSWORD=P@ssw0rd -d mysql/mysql-server:latest
+
+connect mysql
+docker exec -it 7bacd41e7e0c bash
+
+select @@version;
+
+docker inspect r2TemplateTS
+see "IPAddress"
